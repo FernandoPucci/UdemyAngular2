@@ -19,6 +19,8 @@ import { Component } from '@angular/core';
                 <td [attr.colspan]= "colSpan">TEST COLSPAN</td>
             </tr>
         </table>
+
+    <button class="btn btn-primary">Save</button>
     `
 })
 
