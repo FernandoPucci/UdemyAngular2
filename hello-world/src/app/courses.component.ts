@@ -11,14 +11,6 @@ import { Component } from '@angular/core';
         {{course}}
         </li>
     </ul>
-
-    <h2>{{ authors.length }} Authors</h2>
-    <ul>
-        <li *ngFor="let author of authors">
-        {{author}}
-        </li>
-    </ul>
-
     `
 })
 
