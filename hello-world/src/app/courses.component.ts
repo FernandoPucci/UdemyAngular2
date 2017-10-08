@@ -20,7 +20,7 @@ import { Component } from '@angular/core';
             </tr>
         </table>
 
-    <button class="btn btn-primary">Save</button>
+    <button class="btn btn-primary" [class.active]="active">Save</button>
     `
 })
 
@@ -30,6 +30,7 @@ export class CoursesComponent {
     authors;
     imageUrl = "http://lorempixel.com/400/200";
     colSpan = 2;
+    active = false;
 
     constructor(service: CoursesService, authorService: AuthorsService) {
         this.courses = service.getCourses();
