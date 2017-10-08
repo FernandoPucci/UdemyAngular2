@@ -22,6 +22,9 @@ import { Component } from '@angular/core';
 
     <button class="btn btn-primary" [class.active]="active" (click)="onSave($event)">Save</button>
     <button [style.backgroundColor]="isActive ? 'blue': 'white'">Button Test</button>
+
+    <input (keyup.enter)="onKeyUp()"/>
+
     `
 })
 
@@ -42,6 +45,10 @@ export class CoursesComponent {
     onSave($event) {
         console.log('Button was clicked!');
         console.log($event);
+    }
+
+    onKeyUp() {
+        console.log('ENTER was Pressed!');
     }
 
 }
