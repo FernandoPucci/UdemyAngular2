@@ -21,6 +21,7 @@ import { Component } from '@angular/core';
         </table>
 
     <button class="btn btn-primary" [class.active]="active">Save</button>
+    <button [style.backgroundColor]="isActive ? 'blue': 'white'">Button Test</button>
     `
 })
 
@@ -31,6 +32,7 @@ export class CoursesComponent {
     imageUrl = "http://lorempixel.com/400/200";
     colSpan = 2;
     active = false;
+    isActive = false;
 
     constructor(service: CoursesService, authorService: AuthorsService) {
         this.courses = service.getCourses();
