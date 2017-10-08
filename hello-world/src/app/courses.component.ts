@@ -14,6 +14,11 @@ import { Component } from '@angular/core';
 
     <img [src]="imageUrl" />
 
+        <table>
+            <tr>
+                <td [attr.colspan]= "colSpan">TEST COLSPAN</td>
+            </tr>
+        </table>
     `
 })
 
@@ -22,6 +27,7 @@ export class CoursesComponent {
     courses;
     authors;
     imageUrl = "http://lorempixel.com/400/200";
+    colSpan = 2;
 
     constructor(service: CoursesService, authorService: AuthorsService) {
         this.courses = service.getCourses();
