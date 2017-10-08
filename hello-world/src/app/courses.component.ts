@@ -20,7 +20,7 @@ import { Component } from '@angular/core';
             </tr>
         </table>
 
-    <button class="btn btn-primary" [class.active]="active">Save</button>
+    <button class="btn btn-primary" [class.active]="active" (click)="onSave($event)">Save</button>
     <button [style.backgroundColor]="isActive ? 'blue': 'white'">Button Test</button>
     `
 })
@@ -37,6 +37,11 @@ export class CoursesComponent {
     constructor(service: CoursesService, authorService: AuthorsService) {
         this.courses = service.getCourses();
         this.authors = authorService.getAuthors();
+    }
+
+    onSave($event) {
+        console.log('Button was clicked!');
+        console.log($event);
     }
 
 }
