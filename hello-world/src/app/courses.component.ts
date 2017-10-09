@@ -16,6 +16,12 @@ import { Component } from '@angular/core';
     <br />
 
     <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+    <br />
+    {{ course.title | uppercase }} <br/>
+    {{ course.students | number }} <br/>
+    {{ course.rating | number:'1.2-2' }} <br/>
+    {{ course.price | currency:BRL:true:'3.2-2' }} <br/>
+    {{ course.releaseDate | date:'shortDate' }} <br/>
 
     `
 })
@@ -30,6 +36,14 @@ export class CoursesComponent {
     isActive = false;
     //
     email = 'me@email.com';
+    //
+    course = {
+        title: 'The Complete Angular Course',
+        rating: 4.9745,
+        students: 30123,
+        price: 190.95,
+        releaseDate: new Date(2016, 3, 1)
+    };
 
     constructor(service: CoursesService, authorService: AuthorsService) {
         this.courses = service.getCourses();
