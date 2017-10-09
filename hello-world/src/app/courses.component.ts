@@ -24,6 +24,7 @@ import { Component } from '@angular/core';
     <button [style.backgroundColor]="isActive ? 'blue': 'white'">Button Test</button>
 
     <input (keyup.enter)="onKeyUp()"/>
+    <input #email (keyup.enter)="onKeyUpValue(email.value)"/>
 
     `
 })
@@ -49,6 +50,10 @@ export class CoursesComponent {
 
     onKeyUp() {
         console.log('ENTER was Pressed!');
+    }
+
+    onKeyUpValue(emailAddress) {
+        console.log(emailAddress);
     }
 
 }
