@@ -13,18 +13,9 @@ import { Component } from '@angular/core';
     </ul>
 
     <img [src]="imageUrl" />
+    <br />
 
-        <table>
-            <tr>
-                <td [attr.colspan]= "colSpan">TEST COLSPAN</td>
-            </tr>
-        </table>
-
-    <button class="btn btn-primary" [class.active]="active" (click)="onSave($event)">Save</button>
-    <button [style.backgroundColor]="isActive ? 'blue': 'white'">Button Test</button>
-
-    <input (keyup.enter)="onKeyUp()"/>
-    <input #email (keyup.enter)="onKeyUpValue(email.value)"/>
+    <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
 
     `
 })
@@ -33,10 +24,12 @@ export class CoursesComponent {
     title = 'List of Courses';
     courses;
     authors;
-    imageUrl = "http://lorempixel.com/400/200";
+    imageUrl = 'http://lorempixel.com/400/200';
     colSpan = 2;
     active = false;
     isActive = false;
+    //
+    email = 'me@email.com';
 
     constructor(service: CoursesService, authorService: AuthorsService) {
         this.courses = service.getCourses();
@@ -49,11 +42,7 @@ export class CoursesComponent {
     }
 
     onKeyUp() {
-        console.log('ENTER was Pressed!');
-    }
-
-    onKeyUpValue(emailAddress) {
-        console.log(emailAddress);
+        console.log(this.email);
     }
 
 }
