@@ -22,7 +22,7 @@ import { Component } from '@angular/core';
     {{ course.rating | number:'1.2-2' }} <br/>
     {{ course.price | currency:BRL:true:'3.2-2' }} <br/>
     {{ course.releaseDate | date:'shortDate' }} <br/>
-
+    {{ longText | summary:10 }}
     `
 })
 
@@ -44,6 +44,8 @@ export class CoursesComponent {
         price: 190.95,
         releaseDate: new Date(2016, 3, 1)
     };
+    //
+    longText = `Ainda assim, existem dúvidas a respeito de como o novo modelo estrutural aqui preconizado talvez venha a ressaltar a relatividade dos modos de operação convencionais.`;
 
     constructor(service: CoursesService, authorService: AuthorsService) {
         this.courses = service.getCourses();
